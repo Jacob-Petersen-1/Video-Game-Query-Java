@@ -18,7 +18,14 @@ public class VideoGameService {
 
     public long GetCountOfGames(){
         return videoGameRepository.count();
+    };
+
+    public List<VideoGame> GetAllGames(){
+        return videoGameRepository.findAll();
     }
 
+    public VideoGame GetGameById(Integer id){
+        return videoGameRepository.findById(id).orElse(null);
+    }
 
 }
